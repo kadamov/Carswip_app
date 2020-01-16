@@ -1,13 +1,18 @@
+import 'package:camera/new/src/support_android/camera.dart';
+import 'package:carswip_app/camera_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:carswip_app/pages/profile.dart';
 import 'package:carswip_app/pages/settings.dart';
 import 'package:carswip_app/pages/chat.dart';
 import 'package:carswip_app/pages/dashboard.dart';
+import 'package:carswip_app/LoginPage.dart';
+import 'camera.dart';
 
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
+
 class _HomeState extends State<Home> {
   // Properties & Variables needed
 
@@ -30,7 +35,9 @@ class _HomeState extends State<Home> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => CameraScreen()),
+        );
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
@@ -57,11 +64,11 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.dashboard,
+                          Icons.home,
                           color: currentTab == 0 ? Colors.orange : Colors.grey,
                         ),
                         Text(
-                          'Dashboard',
+                          'Home',
                           style: TextStyle(
                             color: currentTab == 0 ? Colors.orange : Colors.grey,
                           ),
@@ -82,11 +89,11 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.chat,
+                          Icons.list,
                           color: currentTab == 1 ? Colors.orange : Colors.grey,
                         ),
                         Text(
-                          'Chats',
+                          'Orders',
                           style: TextStyle(
                             color: currentTab == 1 ? Colors.orange : Colors.grey,
                           ),
@@ -115,7 +122,7 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.dashboard,
+                          Icons.person,
                           color: currentTab == 2 ? Colors.orange : Colors.grey,
                         ),
                         Text(
@@ -140,7 +147,7 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.chat,
+                          Icons.settings,
                           color: currentTab == 3 ? Colors.orange : Colors.grey,
                         ),
                         Text(

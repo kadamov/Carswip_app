@@ -6,12 +6,15 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage('assets/images/home.png'), fit: BoxFit.cover),
       ),
+      child: Center(),
     );
   }
+
 }
